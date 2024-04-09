@@ -24,6 +24,7 @@ namespace AmazingTrack
         private readonly EcsPool<ViewLinkComponent> viewLinkPool;
 
         private readonly EcsFilter ballPassedFilter;
+        
 
         private int BlockPartsCount = 1;
 
@@ -87,10 +88,28 @@ namespace AmazingTrack
             bool rightDirection = Random.value > 0.5f;
 
             lastSpawnPos += rightDirection ? Vector3.right : Vector3.forward;
+            var random = new System.Random();
+            int customcolour = random.Next(1, 3);
+            var color = new Color();
+            switch (customcolour)
+            {
+                case 1:
+                    color = new Color((float)0.257, (float)0.95, (float)0.45, 1.0f);
+                    goto default;
+                case 2:
+                    color = new Color((float)0.2109, (float)0.2695, (float)0.269);
+                    goto default;
+                
+                default:
+                    var group = SpawnBlockWithCrystalAndHole(lastSpawnPos, rightDirection, color);
+                    liveBlocksEntities.Enqueue(group);
+                    break;
+
+            }
             
-            var color = new Color(Random.value, Random.value, Random.value, 1.0f);
-            var group = SpawnBlockWithCrystalAndHole(lastSpawnPos, rightDirection, color);
-            liveBlocksEntities.Enqueue(group);
+
+           
+           
         }
 
         private int SpawnBlockWithCrystalAndHole(Vector3 spawnPos, bool rightSide, Color color)

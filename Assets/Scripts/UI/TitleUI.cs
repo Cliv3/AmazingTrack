@@ -16,6 +16,7 @@ namespace AmazingTrack
         public void OnNormalButtonClick()
         {
             gameSystem.GameStart(GameMode.Normal);
+            Debug.Log("game start");
         }
 
         public void OnHardButtonClick()

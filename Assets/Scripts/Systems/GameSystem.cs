@@ -106,8 +106,7 @@ namespace AmazingTrack
                     break;
                 case GameState.GameEnd:
                 {
-                    if (Input.GetMouseButtonDown(0))
-                        GameStart(true);
+                  
 
                     if (Input.GetKeyDown(KeyCode.Escape))
                         ShowTitle();
@@ -185,7 +184,7 @@ namespace AmazingTrack
             GameStart(recreate);
         }
 
-        private void GameStart(bool recreateScene)
+        public void GameStart(bool recreateScene)
         {
             if (recreateScene)
             {

@@ -17,5 +17,6 @@ namespace AmazingTrack
         
         public float CameraLerpRate = 5.0f;
         public LayerMask CrystalMask; 
+        
     }
 }
