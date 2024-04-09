@@ -92,7 +92,7 @@ namespace AmazingTrack
                     if (Input.GetKeyDown(KeyCode.Escape))
                         ShowTitle();
 
-                    if (Input.GetMouseButtonDown(0))
+                    if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W))
                         ballSystem.ChangeDirection(ballFilter.GetRawEntities()[0]);
 
                     foreach (var _ in ballFallingFilter)
