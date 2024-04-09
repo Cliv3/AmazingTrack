@@ -31,6 +31,7 @@ namespace AmazingTrack
                     Debug.Log("Response: " + response);
                     discountsuccess.SetActive(true);
                     discountfailure.SetActive(false);
+                    inputField.text = "";
                     email.SetActive(false);
                     playagain.SetActive(true);
 
